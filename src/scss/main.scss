@@ -1,0 +1,11 @@
+@import "_vendor.scss";
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo2-Regular.woff2');
+}
+
+body{
+    background-image: url('../img/1.jpg');
+    font-family: 'Exo';
+}
