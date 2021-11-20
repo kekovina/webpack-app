@@ -109,8 +109,15 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/i,
-                loader: 'html-loader'
-
+                use: [
+                    {   
+                        loader: 'html-loader',
+                        options: {
+                            sources: true
+                        }
+                    },
+                'markup-inline-loader'],
+                
             },
             {
                 test: /\.css$/i,
@@ -136,15 +143,15 @@ module.exports = {
                 'css-loader', 
                 'sass-loader']
             },
-            {
-                test: /\.(?:|gif|png|jpg|jpeg|svg)$/,
-                use: [{
-                    loader: 'file-loader',
-                    options:{
-                        name: `./img/${filename('[ext]')}`
-                    }
-                }]
-            },
+            // {
+            //     test: /\.(?:|gif|png|jpg|jpeg)$/,
+            //     use: [{
+            //         loader: 'file-loader',
+            //         options:{
+            //             name: `./img/${filename('[ext]')}`
+            //         }
+            //     }]
+            // },
             {
                 test: /\.(?:|woff2)$/,
                 use: [{
